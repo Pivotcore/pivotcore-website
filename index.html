@@ -1267,21 +1267,78 @@
 
           <div class="consult-card">
             <div class="consult-card-title">Request a free consultation</div>
-<form
-  action="https://formspree.io/f/mkjnonqo"
-  method="POST"
->
-  <label>
-    Your email:
-    <input type="email" name="email">
-  </label>
-  <label>
-    Your message:
-    <textarea name="message"></textarea>
-  </label>
-  <!-- your other form fields go here -->
-  <button type="submit">Send</button>
-</form>
+<!-- Header Context inside the card -->
+    <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 20px;">
+        <span style="font-size: 1.75rem;">🛠️</span>
+        <h3 style="font-size: 1.5rem; font-weight: 700; margin: 0; color: #0f172a;">
+            Free Initial Consultation
+        </h3>
+    </div>
+    <p style="font-size: 1rem; color: #475569; line-height: 1.6; margin: 0 0 24px 0;">
+        A short, focused conversation to review your current supplier base, single-source risks, or cost-reduction targets.
+    </p>
+
+    <!-- Consultation Form -->
+    <form action="#" method="POST" style="display: flex; flex-direction: column; gap: 20px;">
+        <!-- Email Input -->
+        <div>
+            <label for="consult-email" style="display: block; font-size: 0.875rem; font-weight: 600; margin-bottom: 6px; color: #334155;">
+                Work Email Address *
+            </label>
+            <input type="email" id="consult-email" name="email" required placeholder="name@company.co.uk" style="
+                width: 100%; padding: 12px; border: 1px solid #cbd5e1; border-radius: 6px; font-size: 1rem; box-sizing: border-box;
+            ">
+        </div>
+
+        <!-- Quick Select Challenge Checkboxes -->
+        <div>
+            <label style="display: block; font-size: 0.875rem; font-weight: 600; margin-bottom: 8px; color: #334155;">
+                What is your primary challenge right now? (Select all that apply)
+            </label>
+            <div style="display: flex; flex-direction: column; gap: 10px; font-size: 0.95rem; color: #475569;">
+                <label style="display: flex; align-items: flex-start; gap: 10px; cursor: pointer;">
+                    <input type="checkbox" name="challenge" value="cost-pressure" style="margin-top: 4px;">
+                    <span>Rising component or material costs</span>
+                </label>
+                <label style="display: flex; align-items: flex-start; gap: 10px; cursor: pointer;">
+                    <input type="checkbox" name="challenge" value="reliability" style="margin-top: 4px;">
+                    <span>Supplier delivery or quality reliability</span>
+                </label>
+                <label style="display: flex; align-items: flex-start; gap: 10px; cursor: pointer;">
+                    <input type="checkbox" name="challenge" value="no-procurement" style="margin-top: 4px;">
+                    <span>We lack a dedicated in-house purchasing team</span>
+                </label>
+            </div>
+        </div>
+
+        <!-- Optional Message Text Area -->
+        <div>
+            <label for="consult-message" style="display: block; font-size: 0.875rem; font-weight: 600; margin-bottom: 6px; color: #334155;">
+                Brief Message or Context (Optional)
+            </label>
+            <textarea id="consult-message" name="message" rows="4" placeholder="e.g., Looking to review our £1.2m annual spend on machined components..." style="
+                width: 100%; padding: 12px; border: 1px solid #cbd5e1; border-radius: 6px; font-size: 1rem; box-sizing: border-box; resize: vertical;
+            "></textarea>
+        </div>
+
+        <!-- Action Button -->
+        <button type="submit" style="
+            background-color: #0f172a; color: #ffffff; padding: 14px; border: none; border-radius: 6px; font-size: 1rem; font-weight: 600; cursor: pointer; transition: background-color 0.2s;
+        " onmouseover="this.style.backgroundColor='#1e293b'" onmouseout="this.style.backgroundColor='#0f172a'">
+            Request Free Consultation
+        </button>
+    </form>
+
+    <!-- Trust Assurances Underneath Button -->
+    <div style="margin-top: 24px; padding-top: 20px; border-top: 1px solid #f1f5f9; display: flex; flex-direction: column; gap: 8px; font-size: 0.85rem; color: #64748b;">
+        <div style="display: flex; align-items: center; gap: 8px;">
+            <span>🛡️</span> <strong>Zero Obligation:</strong> No high-pressure sales calls or endless follow-ups.
+        </div>
+        <div style="display: flex; align-items: center; gap: 8px;">
+            <span>⏱️</span> <strong>Time Respectful:</strong> Consultations are kept to a strict, crisp agenda.
+        </div>
+    </div>
+</div>
           </div>
         </div>
       </div>
