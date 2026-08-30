@@ -1,0 +1,1333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>PivotCore Sourcing | Purchasing & Sourcing Support for UK Manufacturers</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Purchasing & sourcing support for UK manufacturers. Reduce costs, strengthen suppliers, and eliminate sourcing risk." />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg-dark: #0a1a2f;
+      --bg-section: #0f2238;
+      --bg-light: #f5f7fa;
+      --text-main: #f9fbff;
+      --text-muted: #c3c9d6;
+      --accent: #ff7a00;
+      --accent-soft: rgba(255, 122, 0, 0.12);
+      --border-soft: rgba(255, 255, 255, 0.08);
+      --card-bg: #111f33;
+      --shadow-soft: 0 18px 40px rgba(0, 0, 0, 0.35);
+      --radius-lg: 18px;
+      --radius-md: 10px;
+      --radius-sm: 6px;
+      --max-width: 1120px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top left, #1b3354 0, #050b13 55%, #02040a 100%);
+      color: var(--text-main);
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    /* Layout */
+
+    .page {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .shell {
+      width: 100%;
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    section {
+      padding: 72px 0;
+    }
+
+    @media (max-width: 768px) {
+      section {
+        padding: 52px 0;
+      }
+    }
+
+    /* Header */
+
+    .header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      backdrop-filter: blur(16px);
+      background: linear-gradient(to bottom, rgba(5, 10, 20, 0.92), rgba(5, 10, 20, 0.75));
+      border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+    }
+
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 0;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .brand-mark {
+      width: 32px;
+      height: 32px;
+      border-radius: 999px;
+      background: radial-gradient(circle at 30% 20%, #ffb366 0, #ff7a00 35%, #ff7a00 45%, #0a1a2f 100%);
+      box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.12), 0 12px 30px rgba(0, 0, 0, 0.55);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .brand-mark::after {
+      content: "";
+      position: absolute;
+      inset: 7px;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.35);
+      border-style: dashed;
+      opacity: 0.7;
+    }
+
+    .brand-text-main {
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      font-size: 0.95rem;
+      text-transform: uppercase;
+    }
+
+    .brand-text-sub {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      font-size: 0.9rem;
+    }
+
+    .nav a {
+      color: var(--text-muted);
+      position: relative;
+      padding-bottom: 4px;
+    }
+
+    .nav a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0;
+      height: 2px;
+      background: var(--accent);
+      transition: width 0.18s ease-out;
+    }
+
+    .nav a:hover::after {
+      width: 100%;
+    }
+
+    .nav-cta {
+      padding: 8px 16px;
+      border-radius: 999px;
+      background: var(--accent);
+      color: #1b1207;
+      font-weight: 600;
+      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.45);
+      border: none;
+      cursor: pointer;
+      transition: transform 0.12s ease-out, box-shadow 0.12s ease-out;
+    }
+
+    .nav-cta:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 14px 32px rgba(0, 0, 0, 0.55);
+    }
+
+    @media (max-width: 768px) {
+      .header-inner {
+        gap: 12px;
+      }
+      .nav {
+        display: none;
+      }
+    }
+
+    /* Hero */
+
+    .hero {
+      padding-top: 72px;
+      padding-bottom: 72px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+      gap: 40px;
+      align-items: center;
+    }
+
+    @media (max-width: 900px) {
+      .hero-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    .hero-kicker {
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--accent);
+      font-weight: 600;
+      margin-bottom: 14px;
+    }
+
+    .hero-title {
+      font-size: 2.4rem;
+      line-height: 1.15;
+      margin-bottom: 16px;
+    }
+
+    @media (max-width: 768px) {
+      .hero-title {
+        font-size: 2rem;
+      }
+    }
+
+    .hero-subtitle {
+      font-size: 1rem;
+      color: var(--text-muted);
+      max-width: 520px;
+      margin-bottom: 22px;
+    }
+
+    .hero-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 26px;
+    }
+
+    .badge {
+      font-size: 0.8rem;
+      padding: 6px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      background: rgba(10, 26, 47, 0.7);
+      color: var(--text-muted);
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      align-items: center;
+      margin-bottom: 18px;
+    }
+
+    .btn-primary {
+      padding: 12px 22px;
+      border-radius: 999px;
+      background: var(--accent);
+      color: #1b1207;
+      font-weight: 600;
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.55);
+      transition: transform 0.12s ease-out, box-shadow 0.12s ease-out;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 22px 50px rgba(0, 0, 0, 0.65);
+    }
+
+    .btn-secondary {
+      padding: 10px 18px;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      background: rgba(10, 26, 47, 0.7);
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      cursor: pointer;
+      transition: background 0.12s ease-out, border-color 0.12s ease-out;
+    }
+
+    .btn-secondary:hover {
+      background: rgba(15, 34, 56, 0.9);
+      border-color: rgba(255, 255, 255, 0.3);
+    }
+
+    .hero-note {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    .hero-visual {
+      position: relative;
+    }
+
+    .hero-panel {
+      border-radius: var(--radius-lg);
+      background: radial-gradient(circle at top left, #1f3b63 0, #0a1a2f 40%, #050b13 100%);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      box-shadow: var(--shadow-soft);
+      padding: 18px 18px 16px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-panel-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 14px;
+    }
+
+    .hero-panel-title {
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--text-muted);
+    }
+
+    .hero-panel-tag {
+      font-size: 0.75rem;
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      color: #ffd3a6;
+      border: 1px solid rgba(255, 122, 0, 0.35);
+    }
+
+    .hero-panel-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+      gap: 14px;
+    }
+
+    @media (max-width: 480px) {
+      .hero-panel-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    .hero-metric-card {
+      border-radius: var(--radius-md);
+      background: rgba(5, 10, 20, 0.7);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      padding: 10px 12px;
+    }
+
+    .metric-label {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      margin-bottom: 4px;
+    }
+
+    .metric-value {
+      font-size: 1.1rem;
+      font-weight: 600;
+    }
+
+    .metric-pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 6px;
+    }
+
+    .metric-pill {
+      font-size: 0.75rem;
+      padding: 3px 8px;
+      border-radius: 999px;
+      background: rgba(15, 34, 56, 0.9);
+      color: var(--text-muted);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    .hero-panel-footer {
+      margin-top: 14px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    .hero-panel-footer span strong {
+      color: var(--text-main);
+    }
+
+    .hero-panel-footer-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: #3dd68c;
+      box-shadow: 0 0 0 4px rgba(61, 214, 140, 0.18);
+      margin-right: 6px;
+    }
+
+    /* Section headings */
+
+    .section-heading {
+      margin-bottom: 32px;
+    }
+
+    .section-kicker {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--accent);
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+
+    .section-title {
+      font-size: 1.6rem;
+      margin-bottom: 6px;
+    }
+
+    .section-subtitle {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      max-width: 520px;
+    }
+
+    /* About */
+
+    .about {
+      background: linear-gradient(to bottom, rgba(10, 26, 47, 0.9), rgba(5, 10, 20, 0.95));
+      border-top: 1px solid rgba(255, 255, 255, 0.04);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+      gap: 32px;
+      align-items: start;
+    }
+
+    @media (max-width: 900px) {
+      .about-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    .about-text p {
+      margin-bottom: 12px;
+      font-size: 0.95rem;
+      color: var(--text-muted);
+    }
+
+    .about-highlights {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 10px;
+    }
+
+    .about-highlight {
+      font-size: 0.8rem;
+      padding: 6px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      background: rgba(5, 10, 20, 0.8);
+      color: var(--text-muted);
+    }
+
+    .about-card {
+      border-radius: var(--radius-lg);
+      background: rgba(5, 10, 20, 0.9);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      padding: 18px 18px 16px;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .about-card-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 12px;
+    }
+
+    .avatar {
+      width: 40px;
+      height: 40px;
+      border-radius: 999px;
+      background: radial-gradient(circle at 30% 20%, #ffffff 0, #c3c9d6 35%, #7c8596 60%, #1b2433 100%);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .avatar::after {
+      content: "";
+      position: absolute;
+      inset: 8px;
+      border-radius: 999px;
+      border: 1px solid rgba(5, 10, 20, 0.4);
+      opacity: 0.7;
+    }
+
+    .about-card-title {
+      font-size: 0.95rem;
+      font-weight: 600;
+    }
+
+    .about-card-role {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    .about-card-body {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-bottom: 10px;
+    }
+
+    .about-card-meta {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    /* Services */
+
+    .services {
+      background: radial-gradient(circle at top, #1b3354 0, #050b13 55%, #02040a 100%);
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 20px;
+    }
+
+    @media (max-width: 900px) {
+      .services-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 640px) {
+      .services-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    .service-card {
+      border-radius: var(--radius-lg);
+      background: rgba(5, 10, 20, 0.9);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      padding: 18px 18px 16px;
+      box-shadow: 0 14px 32px rgba(0, 0, 0, 0.45);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .service-icon {
+      width: 26px;
+      height: 26px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.06);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 10px;
+      font-size: 0.9rem;
+      color: var(--accent);
+    }
+
+    .service-title {
+      font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: 6px;
+    }
+
+    .service-subtitle {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-bottom: 10px;
+    }
+
+    .service-list {
+      list-style: none;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    .service-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 6px;
+      margin-bottom: 6px;
+    }
+
+    .service-list li::before {
+      content: "•";
+      color: var(--accent);
+      font-size: 0.9rem;
+      margin-top: 1px;
+    }
+
+    /* Why choose */
+
+    .why {
+      background: linear-gradient(to bottom, rgba(10, 26, 47, 0.95), rgba(5, 10, 20, 0.98));
+      border-top: 1px solid rgba(255, 255, 255, 0.04);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+    }
+
+    .why-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+      gap: 28px;
+      align-items: start;
+    }
+
+    @media (max-width: 900px) {
+      .why-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    .why-list {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 8px;
+    }
+
+    @media (max-width: 640px) {
+      .why-list {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    .why-item {
+      border-radius: var(--radius-md);
+      background: rgba(5, 10, 20, 0.9);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      padding: 10px 12px;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    .why-item strong {
+      display: block;
+      font-size: 0.9rem;
+      color: var(--text-main);
+      margin-bottom: 4px;
+    }
+
+    .why-note {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-top: 12px;
+    }
+
+    .why-card {
+      border-radius: var(--radius-lg);
+      background: rgba(5, 10, 20, 0.9);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      padding: 18px 18px 16px;
+      box-shadow: var(--shadow-soft);
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    .why-card-header {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 10px;
+    }
+
+    .why-chip {
+      font-size: 0.75rem;
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      color: var(--text-muted);
+    }
+
+    /* Insights / newsletter */
+
+    .insights {
+      background: radial-gradient(circle at top, #1b3354 0, #050b13 55%, #02040a 100%);
+    }
+
+    .insights-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+      gap: 28px;
+      align-items: center;
+    }
+
+    @media (max-width: 900px) {
+      .insights-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    .insights-text {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      max-width: 520px;
+    }
+
+    .insights-card {
+      border-radius: var(--radius-lg);
+      background: rgba(5, 10, 20, 0.9);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      padding: 18px 18px 16px;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .insights-card-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+
+    .insights-icon {
+      width: 28px;
+      height: 28px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.06);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.9rem;
+      color: var(--accent);
+    }
+
+    .insights-card-title {
+      font-size: 0.95rem;
+      font-weight: 600;
+    }
+
+    .insights-card-body {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-bottom: 10px;
+    }
+
+    .insights-form {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 6px;
+    }
+
+    .input {
+      flex: 1 1 180px;
+      min-width: 0;
+      padding: 9px 11px;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      background: rgba(5, 10, 20, 0.9);
+      color: var(--text-main);
+      font-size: 0.85rem;
+      outline: none;
+    }
+
+    .input::placeholder {
+      color: rgba(195, 201, 214, 0.7);
+    }
+
+    .insights-note {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      margin-top: 8px;
+    }
+
+    /* Consultation form */
+
+    .consult {
+      background: linear-gradient(to bottom, rgba(10, 26, 47, 0.95), rgba(5, 10, 20, 0.98));
+      border-top: 1px solid rgba(255, 255, 255, 0.04);
+    }
+
+    .consult-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+      gap: 28px;
+      align-items: start;
+    }
+
+    @media (max-width: 900px) {
+      .consult-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    .consult-text {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      max-width: 520px;
+    }
+
+    .consult-list {
+      list-style: none;
+      margin-top: 10px;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    .consult-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 6px;
+      margin-bottom: 6px;
+    }
+
+    .consult-list li::before {
+      content: "→";
+      color: var(--accent);
+      font-size: 0.9rem;
+      margin-top: 1px;
+    }
+
+    .consult-card {
+      border-radius: var(--radius-lg);
+      background: rgba(5, 10, 20, 0.9);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      padding: 18px 18px 16px;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .consult-card-title {
+      font-size: 0.95rem;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+
+    .form-row {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      margin-bottom: 10px;
+    }
+
+    .label {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    .textarea {
+      min-height: 90px;
+      border-radius: 12px;
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      background: rgba(5, 10, 20, 0.9);
+      color: var(--text-main);
+      font-size: 0.85rem;
+      padding: 9px 11px;
+      resize: vertical;
+      outline: none;
+    }
+
+    .consult-note {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      margin-top: 8px;
+    }
+
+    /* Footer */
+
+    .footer {
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
+      padding: 18px 0 26px;
+      background: #050b13;
+      margin-top: 32px;
+    }
+
+    .footer-inner {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    .footer-nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .footer-nav a {
+      color: var(--text-muted);
+    }
+
+    .footer-social {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .social-pill {
+      font-size: 0.8rem;
+      padding: 5px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      background: rgba(5, 10, 20, 0.9);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .social-pill span {
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <!-- Header -->
+    <header class="header">
+      <div class="shell">
+        <div class="header-inner">
+          <div class="brand">
+            <div class="brand-mark"></div>
+            <div>
+              <div class="brand-text-main">PivotCore Sourcing</div>
+              <div class="brand-text-sub">Purchasing & sourcing for UK manufacturers</div>
+            </div>
+          </div>
+          <nav class="nav">
+            <a href="#about">About</a>
+            <a href="#services">Services</a>
+            <a href="#why">Why PivotCore</a>
+            <a href="#consult">Consultation</a>
+            <button class="nav-cta" onclick="document.getElementById('consult').scrollIntoView({behavior:'smooth'})">
+              Request consultation
+            </button>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero" id="top">
+      <div class="shell">
+        <div class="hero-grid">
+          <div>
+            <div class="hero-kicker">Purchasing & sourcing support for UK manufacturers</div>
+            <h1 class="hero-title">
+              Reduce costs, strengthen suppliers, and eliminate sourcing risk.
+            </h1>
+            <p class="hero-subtitle">
+              Practical, factory‑floor procurement expertise for small and medium‑sized manufacturers. From supplier identification to
+              day‑to‑day purchasing support, built around real production realities—not corporate theory.
+            </p>
+
+            <div class="hero-badges">
+              <span class="badge">20+ years SME manufacturing experience</span>
+              <span class="badge">UK, EU & Asia supplier network</span>
+              <span class="badge">Hands‑on factory‑floor problem solving</span>
+            </div>
+
+            <div class="hero-actions">
+              <button class="btn-primary" onclick="document.getElementById('consult').scrollIntoView({behavior:'smooth'})">
+                Discuss your purchasing challenges
+              </button>
+              <button class="btn-secondary" onclick="document.getElementById('services').scrollIntoView({behavior:'smooth'})">
+                View sourcing & purchasing services
+              </button>
+            </div>
+
+            <p class="hero-note">
+              No obligation, no long‑term lock‑ins—just clear, practical advice on your current supplier and purchasing issues.
+            </p>
+          </div>
+
+          <div class="hero-visual">
+            <div class="hero-panel">
+              <div class="hero-panel-header">
+                <div class="hero-panel-title">Example SME sourcing snapshot</div>
+                <div class="hero-panel-tag">Real‑world manufacturing context</div>
+              </div>
+              <div class="hero-panel-grid">
+                <div class="hero-metric-card">
+                  <div class="metric-label">Annual spend under review</div>
+                  <div class="metric-value">£1.2m</div>
+                  <div class="metric-pill-row">
+                    <span class="metric-pill">Machined components</span>
+                    <span class="metric-pill">Fabrications</span>
+                    <span class="metric-pill">Bought‑in assemblies</span>
+                  </div>
+                </div>
+                <div class="hero-metric-card">
+                  <div class="metric-label">Typical outcomes</div>
+                  <div class="metric-value">6–12%</div>
+                  <div class="metric-pill-row">
+                    <span class="metric-pill">Cost reduction</span>
+                    <span class="metric-pill">Supplier consolidation</span>
+                    <span class="metric-pill">Improved delivery performance</span>
+                  </div>
+                </div>
+              </div>
+              <div class="hero-panel-footer">
+                <span>
+                  <span class="hero-panel-footer-dot"></span>
+                  <strong>SME focus:</strong> sourcing aligned to realistic volumes, tooling constraints, and production schedules.
+                </span>
+                <span>UK • EU • Asia</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section class="about" id="about">
+      <div class="shell">
+        <div class="section-heading">
+          <div class="section-kicker">About PivotCore Sourcing</div>
+          <h2 class="section-title">Procurement built inside real manufacturing environments.</h2>
+          <p class="section-subtitle">
+            PivotCore is led by UK‑based purchasing professionals with deep experience inside small and medium‑sized manufacturers.
+          </p>
+        </div>
+
+        <div class="about-grid">
+          <div class="about-text">
+            <p>
+              The work is grounded in factory‑floor reality: machine capacity, tooling constraints, batch sizes, and the day‑to‑day
+              pressures of keeping production running. That means sourcing and purchasing decisions that actually work in practice,
+              not just on a slide deck.
+            </p>
+            <p>
+              Engagements range from short, focused sourcing exercises to ongoing fractional purchasing support—ideal for SMEs that
+              don’t have a full‑time procurement function but still need structured, professional purchasing.
+            </p>
+            <div class="about-highlights">
+              <span class="about-highlight">SME manufacturing focus</span>
+              <span class="about-highlight">Hands‑on supplier visits</span>
+              <span class="about-highlight">Cost & risk balanced</span>
+              <span class="about-highlight">Flexible engagement models</span>
+            </div>
+          </div>
+
+          <div class="about-card">
+            <div class="about-card-header">
+              <div class="avatar"></div>
+              <div>
+                <div class="about-card-title">Lead purchasing consultant</div>
+                <div class="about-card-role">20+ years in UK manufacturing SMEs</div>
+              </div>
+            </div>
+            <div class="about-card-body">
+              Experience across precision engineering, fabrication, and assembly environments—covering everything from supplier
+              identification and negotiation planning to implementing practical purchasing processes and KPIs.
+            </div>
+            <div class="about-card-meta">
+              Typical work includes:
+              <br />
+              • Supplier appraisal and vetting
+              <br />
+              • Cost breakdown and should‑cost analysis
+              <br />
+              • Negotiation planning and execution
+              <br />
+              • Purchasing workflow and data structure design
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services -->
+    <section class="services" id="services">
+      <div class="shell">
+        <div class="section-heading">
+          <div class="section-kicker">Services</div>
+          <h2 class="section-title">Supplier identification, sourcing, and purchasing support.</h2>
+          <p class="section-subtitle">
+            Three core service areas designed around the needs of UK manufacturing SMEs.
+          </p>
+        </div>
+
+        <div class="services-grid">
+          <div class="service-card">
+            <div class="service-icon">🔎</div>
+            <div class="service-title">Supplier identification & vetting</div>
+            <div class="service-subtitle">
+              Find capable, reliable suppliers that fit your production and quality requirements.
+            </div>
+            <ul class="service-list">
+              <li>Capability and capacity assessment for machining, fabrication, and assembly suppliers</li>
+              <li>Quality, certification, and compliance checks (e.g. ISO, sector‑specific requirements)</li>
+              <li>Risk assessment covering delivery performance, financial stability, and single‑source exposure</li>
+              <li>Shortlisting and structured supplier comparison for decision‑making</li>
+            </ul>
+          </div>
+
+          <div class="service-card">
+            <div class="service-icon">📊</div>
+            <div class="service-title">Strategic & tactical sourcing</div>
+            <div class="service-subtitle">
+              Cost‑focused sourcing aligned with realistic SME volumes and constraints.
+            </div>
+            <ul class="service-list">
+              <li>Should‑cost analysis and cost breakdown to understand true price drivers</li>
+              <li>Competitive sourcing exercises and RFQ structuring for clarity and comparability</li>
+              <li>Supplier consolidation where appropriate to reduce complexity and improve leverage</li>
+              <li>Negotiation planning and support, including walk‑away points and trade‑off options</li>
+            </ul>
+          </div>
+
+          <div class="service-card">
+            <div class="service-icon">🧩</div>
+            <div class="service-title">Purchasing & supply chain support</div>
+            <div class="service-subtitle">
+              Fractional procurement support for SMEs without in‑house purchasing teams.
+            </div>
+            <ul class="service-list">
+              <li>Day‑to‑day purchasing support for key categories and suppliers</li>
+              <li>Basic purchasing process and data structure design (POs, approvals, supplier records)</li>
+              <li>Supplier performance tracking and simple KPI dashboards</li>
+              <li>Support with Incoterms, logistics options, and practical supply chain risk reduction</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why choose PivotCore -->
+    <section class="why" id="why">
+      <div class="shell">
+        <div class="section-heading">
+          <div class="section-kicker">Why manufacturers choose PivotCore</div>
+          <h2 class="section-title">SME‑focused, cost‑driven, and grounded in reality.</h2>
+          <p class="section-subtitle">
+            The aim is simple: better suppliers, better pricing, and fewer unpleasant surprises in your supply chain.
+          </p>
+        </div>
+
+        <div class="why-grid">
+          <div>
+            <div class="why-list">
+              <div class="why-item">
+                <strong>SME manufacturing focus</strong>
+                Built around the realities of smaller manufacturers—limited resources, tight lead times, and the need for pragmatic
+                solutions.
+              </div>
+              <div class="why-item">
+                <strong>Cost & risk balanced</strong>
+                Cost reduction is important, but not at the expense of delivery reliability, quality, or long‑term supplier health.
+              </div>
+              <div class="why-item">
+                <strong>Fast supplier identification</strong>
+                Structured, targeted supplier searches that avoid endless generic lists and focus on realistic, workable options.
+              </div>
+              <div class="why-item">
+                <strong>Hands‑on procurement experience</strong>
+                Work carried out by someone who has sat in the purchasing seat inside manufacturing businesses—not just advised from
+                the outside.
+              </div>
+            </div>
+            <p class="why-note">
+              Engagements can be short and focused or ongoing and fractional—designed to fit around your existing team and capacity.
+            </p>
+          </div>
+
+          <div class="why-card">
+            <div class="why-card-header">
+              <span class="why-chip">Typical starting point</span>
+              <span class="why-chip">Practical first steps</span>
+            </div>
+            <p>
+              Most engagements begin with a simple review of your current supplier base and purchasing spend—identifying where the
+              biggest opportunities and risks sit. From there, a small number of focused actions are agreed, such as:
+            </p>
+            <ul class="consult-list">
+              <li>Targeted sourcing for a specific category or component family</li>
+              <li>Supplier consolidation and renegotiation for a defined spend area</li>
+              <li>Basic purchasing process and data clean‑up to improve visibility</li>
+            </ul>
+            <p class="why-note">
+              The goal is always to create visible, measurable improvements without adding unnecessary complexity or bureaucracy.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Insights / newsletter -->
+    <section class="insights" id="insights">
+      <div class="shell">
+        <div class="section-heading">
+          <div class="section-kicker">Occasional sourcing & purchasing insights</div>
+          <h2 class="section-title">Short, practical emails—not a marketing barrage.</h2>
+          <p class="section-subtitle">
+            For manufacturing leaders and purchasing teams who want occasional, useful perspectives on sourcing and supplier issues.
+          </p>
+        </div>
+
+        <div class="insights-grid">
+          <div class="insights-text">
+            <p>
+              Emails are infrequent and focused on real‑world topics: supplier consolidation trade‑offs, negotiation planning,
+              practical risk reduction, and simple ways to improve purchasing data and visibility.
+            </p>
+            <p>
+              If you’d like to receive occasional insights, you can register your interest below. You can unsubscribe at any time,
+              and your details won’t be shared.
+            </p>
+          </div>
+
+          <div class="insights-card">
+            <div class="insights-card-header">
+              <div class="insights-icon">✉️</div>
+              <div>
+                <div class="insights-card-title">Register for occasional emails</div>
+                <div class="about-card-role">Short, practical sourcing & purchasing notes.</div>
+              </div>
+            </div>
+            <div class="insights-card-body">
+              Leave your details and you’ll be added to a small list of manufacturing leaders and purchasing professionals who
+              receive occasional, practical emails.
+            </div>
+            <form class="insights-form">
+              <input class="input" type="text" name="name" placeholder="Your name" />
+              <input class="input" type="email" name="email" placeholder="Work email address" />
+              <button type="submit" class="btn-primary">Register interest</button>
+            </form>
+            <div class="insights-note">
+              No spam. No daily sequences. Just occasional, useful perspectives on sourcing and purchasing for manufacturers.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Consultation form -->
+    <section class="consult" id="consult">
+      <div class="shell">
+        <div class="section-heading">
+          <div class="section-kicker">Free initial consultation</div>
+          <h2 class="section-title">Discuss your current purchasing and supplier challenges.</h2>
+          <p class="section-subtitle">
+            A short, focused conversation to understand where you are now and where the biggest opportunities and risks sit.
+          </p>
+        </div>
+
+        <div class="consult-grid">
+          <div class="consult-text">
+            <p>
+              The initial consultation is straightforward: a short call or online meeting to walk through your current supplier
+              base, key categories, and any pressing issues—such as cost pressure, delivery reliability, or quality concerns.
+            </p>
+            <ul class="consult-list">
+              <li>Understand your current supplier and spend profile</li>
+              <li>Identify immediate risks and opportunities</li>
+              <li>Agree a small number of practical next steps</li>
+            </ul>
+            <p class="consult-note">
+              There’s no obligation to proceed beyond the initial conversation. If it’s not the right fit, you’ll still have a
+              clearer view of your current situation.
+            </p>
+          </div>
+
+          <div class="consult-card">
+            <div class="consult-card-title">Request a free consultation</div>
+            <form>
+              <div class="form-row">
+                <label class="label" for="consult-name">Name</label>
+                <input class="input" id="consult-name" name="name" type="text" placeholder="Your name" />
+              </div>
+              <div class="form-row">
+                <label class="label" for="consult-email">Email</label>
+                <input class="input" id="consult-email" name="email" type="email" placeholder="Work email address" />
+              </div>
+              <div class="form-row">
+                <label class="label" for="consult-company">Company</label>
+                <input class="input" id="consult-company" name="company" type="text" placeholder="Company name" />
+              </div>
+              <div class="form-row">
+                <label class="label" for="consult-message">Brief outline of your current challenges</label>
+                <textarea class="textarea" id="consult-message" name="message" placeholder="For example: cost pressure on key components, delivery reliability issues, or supplier consolidation needs."></textarea>
+              </div>
+              <button type="submit" class="btn-primary">Request consultation</button>
+              <div class="consult-note">
+                Your details will be used only to respond to your enquiry. No spam, no mailing list unless you explicitly opt in.
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="shell">
+        <div class="footer-inner">
+          <div>© PivotCore Sourcing. Purchasing & sourcing support for UK manufacturers.</div>
+          <div class="footer-nav">
+            <a href="#about">About</a>
+            <a href="#services">Services</a>
+            <a href="#why">Why PivotCore</a>
+            <a href="#consult">Contact</a>
+          </div>
+          <div class="footer-social">
+            <div class="social-pill">
+              <span>in</span>
+              <span>Connect on LinkedIn</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <!-- Optional: smooth scroll for anchor links in older browsers -->
+  <script>
+    document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {
+      anchor.addEventListener("click", function (e) {
+        const targetId = this.getAttribute("href").substring(1);
+        const target = document.getElementById(targetId);
+        if (target) {
+          e.preventDefault();
+          target.scrollIntoView({ behavior: "smooth" });
+        }
+      });
+    });
+  </script>
+</body>
+</html>
