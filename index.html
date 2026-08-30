@@ -1267,31 +1267,21 @@
 
           <div class="consult-card">
             <div class="consult-card-title">Request a free consultation</div>
-          <form
+<form
   action="https://formspree.io/f/mykzgbpw"
   method="POST"
 >
-              <div class="form-row">
-                <label class="label" for="consult-name">Name</label>
-                <input class="input" id="consult-name" name="name" type="text" placeholder="Your name" />
-              </div>
-              <div class="form-row">
-                <label class="label" for="consult-email">Email</label>
-                <input class="input" id="consult-email" name="email" type="email" placeholder="Work email address" />
-              </div>
-              <div class="form-row">
-                <label class="label" for="consult-company">Company</label>
-                <input class="input" id="consult-company" name="company" type="text" placeholder="Company name" />
-              </div>
-              <div class="form-row">
-                <label class="label" for="consult-message">Brief outline of your current challenges</label>
-                <textarea class="textarea" id="consult-message" name="message" placeholder="For example: cost pressure on key components, delivery reliability issues, or supplier consolidation needs."></textarea>
-              </div>
-              <button type="submit" class="btn-primary">Request consultation</button>
-              <div class="consult-note">
-                Your details will be used only to respond to your enquiry. No spam, no mailing list unless you explicitly opt in.
-              </div>
-            </form>
+  <label>
+    Your email:
+    <input type="email" name="email">
+  </label>
+  <label>
+    Your message:
+    <textarea name="message"></textarea>
+  </label>
+  <!-- your other form fields go here -->
+  <button type="submit">Send</button>
+</form>
           </div>
         </div>
       </div>
